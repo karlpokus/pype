@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/pype-stack.svg)](https://badge.fury.io/js/pype-stack)
+
 # pype
 Middleware-style piping for server or browser. No dependencies. Works with async. WIP - not suitable for production.
 
