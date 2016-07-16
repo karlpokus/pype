@@ -1,0 +1,28 @@
+{
+  "name": "pype",
+  "version": "0.1.0",
+  "description": "Middleware-style piping for server or browser",
+  "main": "pype.js",
+  "scripts": {
+    "test": "tape ./test/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karlpokus/pype.git"
+  },
+  "keywords": [
+    "pipe",
+    "middleware",
+    "server",
+    "browser"
+  ],
+  "author": "Karl Pokus <karl.pokus@gmail.com> (https://github.com/karlpokus)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karlpokus/pype/issues"
+  },
+  "homepage": "https://github.com/karlpokus/pype#readme",
+  "devDependencies": {
+    "tape": "^4.6.0"
+  }
+}
