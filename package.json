@@ -1,5 +1,5 @@
 {
-  "name": "pype",
+  "name": "pype-stack",
   "version": "0.1.0",
   "description": "Middleware-style piping for server or browser",
   "main": "pype.js",
