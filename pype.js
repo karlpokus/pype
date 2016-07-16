@@ -1,7 +1,5 @@
 module.exports = function(self, arr, errorHandler, cb) {
-  var i = 0,
-      req = {},
-      res = {},
+  var i, req, res,
       run = function() {
         arr[i++].call(self, req, res, next);
       },
@@ -20,7 +18,11 @@ module.exports = function(self, arr, errorHandler, cb) {
     if (request && response) {
       req = request;
       res = response;
+    } else {
+      req = {};
+      res = {};
     }
+    i = 0;
     run();
   }
 };
