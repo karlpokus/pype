@@ -44,17 +44,26 @@ server.on('request', function(req, res){
   pype(null, stack, errorHandler, finalHandler)(req, res);
 });
 server.listen(3000);
+
+// curried in browser w subsequent multiple calls - assume valid functions
+var login = pype(token, [getUserdata, post, display], errorHandler);
+$('.login-btn').click(login);
 ```
 
 # arguments
 ```javascript
 pype(context, stack, errorHandler, finalHandler)(req, res);
-// context: <any> value for 'this' for each fn
-// stack: <array> of middleware
-// errorHandler: <function> <optional> if called stops execution of the stack. Is passed the error.
-// finalHandler: <function> <optional>
-// returned fn: <function> <call required> <args optional>
 ```
+`context` [any] value for `this` for each fn
+
+`stack` [array] of middleware
+
+`errorHandler` [function] [optional] if called stops execution of the stack. Is passed the error.
+
+`finalHandler` [function] [optional] last fn to run. Useful in test settings.
+
+`req`, `res` [objects] [optional]
+
 Note: All middleware use express-style args `req, res, next`. The exceptions are `errorHandler` and `finalHandler`. `errorHandler` is unlike express a separate arg from the stack and only called w `err, req, res`. `finalHandler` is called w `req, res`. Empty objects are passed to return fn as default.
 
 # test
